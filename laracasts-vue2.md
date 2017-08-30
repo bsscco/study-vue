@@ -129,3 +129,79 @@
 </body>
 </html>
 ```
+
+**계산되지 않은 프로퍼티**
+```html
+<body>
+    <div id="root">
+        <h2>All tasks</h2>
+        <ul>
+            <li v-for="task in tasks" v-text="task.desc"></li>
+        </ul>
+
+        <h2>Incompleted tasks</h2>
+        <ul>
+            <li v-for="task in tasks" v-if="! task.completed" v-text="task.desc"></li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.4.2"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#root',
+            data: {
+                tasks: [
+                    { desc: 'task 1', completed: true },
+                    { desc: 'task 2', completed: false },
+                    { desc: 'task 3', completed: false },
+                    { desc: 'task 4', completed: true }
+                ]
+            },
+            computed: {
+
+            }
+        });
+    </script>
+</body>
+```
+콘솔에서 ```app.tasks[0].completed = false```
+
+**계산된 프로퍼티 동적**
+```html
+<body>
+    <div id="root">
+        <h2>All tasks</h2>
+        <ul>
+            <li v-for="task in tasks" v-text="task.desc"></li>
+        </ul>
+
+        <h2>Incompleted tasks</h2>
+        <ul>
+            <li v-for="task in incompletedTasks" v-text="task.desc"></li>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.4.2"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#root',
+            data: {
+                tasks: [
+                    { desc: 'task 1', completed: true },
+                    { desc: 'task 2', completed: false },
+                    { desc: 'task 3', completed: false },
+                    { desc: 'task 4', completed: true }
+                ]
+            },
+            computed: {
+                incompletedTasks: function() {
+                    return this.tasks.filter(task => ! task.completed);
+                }
+            }
+        });
+    </script>
+</body>
+```
+콘솔에서 ```app.tasks[0].completed = false```
