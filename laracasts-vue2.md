@@ -1,4 +1,4 @@
-데이터 바인딩 js버전
+**데이터 바인딩 js버전**
 ```html
 <body>
     <input type="text" id="input">
@@ -13,7 +13,7 @@
 </body>
 ```
 
-데이터 바인딩 vue버전
+**데이터 바인딩 vue버전**
 ```html
 <body>
     <div id="root">
@@ -34,7 +34,7 @@
 </body>
 ```
 
-리스트 데이터 바인딩 js버전
+**리스트 데이터 바인딩 js버전**
 ```html
 <body>
     <div id="root">
@@ -66,7 +66,7 @@
 </body>
 ```
 
-리스트 데이터 바인딩 vue버전
+**리스트 데이터 바인딩 vue버전**
 ```html
 <body>
     <div id="root">
