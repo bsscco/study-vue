@@ -96,3 +96,36 @@
 </body>
 ```
 
+**스타일 바인딩 vue버전**
+```html
+<html>
+<head>
+    <style>
+        .is-loading {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <button :class="{'is-loading': isLoading}" @click="toggleClass">toggle</button>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.4.2"></script>
+
+    <script>
+        var app = new Vue({
+            el: '#root',
+            data: {
+                isLoading: false
+            },
+            methods: {
+                toggleClass: function() {
+                    this.isLoading = !this.isLoading;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+```
