@@ -12,6 +12,7 @@
     </script>
 </body>
 ```
+<br>
 
 **데이터 바인딩 vue버전**
 ```html
@@ -33,6 +34,7 @@
     </script>
 </body>
 ```
+<br>
 
 **리스트 데이터 바인딩 js버전**
 ```html
@@ -65,6 +67,7 @@
     </script>
 </body>
 ```
+<br>
 
 **리스트 데이터 바인딩 vue버전**
 ```html
@@ -95,6 +98,7 @@
     </script>
 </body>
 ```
+<br>
 
 **스타일 바인딩 vue버전**
 ```html
@@ -129,8 +133,9 @@
 </body>
 </html>
 ```
+<br>
 
-**계산되지 않은 프로퍼티**
+**계산되지 않은 프로퍼티 vue버전**
 ```html
 <body>
     <div id="root">
@@ -157,17 +162,15 @@
                     { desc: 'task 3', completed: false },
                     { desc: 'task 4', completed: true }
                 ]
-            },
-            computed: {
-
             }
         });
     </script>
 </body>
 ```
 콘솔에서 ```app.tasks[0].completed = false```
+<br>
 
-**계산된 프로퍼티 동적**
+**계산된 프로퍼티 vue버전**
 ```html
 <body>
     <div id="root">
@@ -205,3 +208,41 @@
 </body>
 ```
 콘솔에서 ```app.tasks[0].completed = false```
+<br>
+
+**컴포넌트 js버전**
+```html
+<body>
+    <div id="root">
+        <ul>
+            <li>Go to work.</li>
+            <li>Go to store.</li>
+            <li>Go to school.</li>
+        </ul>
+    </div>
+</body>
+```
+<br>
+
+**컴포넌트 vue버전**
+```html
+<body>
+    <div id="root">
+        <task>Go to work.</task>
+        <task>Go to store.</task>
+        <task>Go to school.</task>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.4.2"></script>
+    
+    <script>
+        Vue.component('task', {
+            template: '<li><slot></slot></li>'
+        });
+
+        new Vue({
+            el: '#root'
+        });
+    </script>
+</body>
+```
