@@ -1,5 +1,6 @@
 **데이터 바인딩 js버전**
 ```html
+<html>
 <body>
     <input type="text" id="input">
 
@@ -11,11 +12,13 @@
         document.querySelector('#input').value = data.message;
     </script>
 </body>
+</html>
 ```
 <br>
 
 **데이터 바인딩 vue버전**
 ```html
+<html>
 <body>
     <div id="root">
         <input type="text" v-model="message">
@@ -33,11 +36,13 @@
         });
     </script>
 </body>
+</html>
 ```
 <br>
 
 **리스트 데이터 바인딩 js버전**
 ```html
+<html>
 <body>
     <div id="root">
         <ul>
@@ -66,11 +71,13 @@
         });
     </script>
 </body>
+</html>
 ```
 <br>
 
 **리스트 데이터 바인딩 vue버전**
 ```html
+<html>
 <body>
     <div id="root">
         <ul>
@@ -97,6 +104,7 @@
         });
     </script>
 </body>
+</html>
 ```
 <br>
 
@@ -137,6 +145,7 @@
 
 **계산되지 않은 프로퍼티 vue버전**
 ```html
+<html>
 <body>
     <div id="root">
         <h2>All tasks</h2>
@@ -166,12 +175,14 @@
         });
     </script>
 </body>
+</html>
 ```
 콘솔에서 ```app.tasks[0].completed = false```
 <br>
 
 **계산된 프로퍼티 vue버전**
 ```html
+<html>
 <body>
     <div id="root">
         <h2>All tasks</h2>
@@ -206,12 +217,14 @@
         });
     </script>
 </body>
+</html>
 ```
 콘솔에서 ```app.tasks[0].completed = false```
 <br>
 
 **컴포넌트 js버전**
 ```html
+<html>
 <body>
     <div id="root">
         <ul>
@@ -221,11 +234,13 @@
         </ul>
     </div>
 </body>
+</html>    
 ```
 <br>
 
 **컴포넌트 vue버전**
 ```html
+<html>
 <body>
     <div id="root">
         <task-list></task-list>
@@ -260,11 +275,13 @@
         });
     </script>
 </body>
+</html>
 ```
 <br>
 
 **컴포넌트 연습1 vue버전**
 ```html
+<html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">
     <style type="text/css">
@@ -307,11 +324,13 @@
         });
     </script>
 </body>
+</html>
 ```
 <br>
 
 **컴포넌트 연습2 vue버전**
 ```html
+<html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">
 </head>
@@ -346,18 +365,20 @@
         });
     </script>
 </body>
+</html>
 ```
 <br>
 
 **컴포넌트 연습3 vue버전**
 ```html
+<html>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.css">
 </head>
 <body>
     <div id="root">
         <tabs>
-            <tab name="Tab A" :selected="true">
+            <tab name="Tab A" selected="true">
                 <h1>blah blah A</h1>
             </tab>
             <tab name="Tab B">
@@ -434,4 +455,5 @@
         });
     </script>
 </body>
+<html>
 ```
