@@ -97,8 +97,8 @@
             },
             methods: {
                 addName: function() {
-                    this.names.push(this.input);
-                    this.input = '';
+                    this.names.push(this.newName);
+                    this.newName = '';
                 }
             }
         });
