@@ -498,3 +498,45 @@
 </body>
 </html>
 ```
+<br>
+
+**컴포넌트 커뮤니케이션 연습2 vue버전**
+```html
+<html>
+<body>
+    <div id="root">
+        <coupon></coupon>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.4.2"></script>
+
+    <script>
+        window.Event = new Vue();
+
+        Vue.component('coupon', {
+            template: `
+                <input placeholder="Input coupon." @blur="onCouponApplied"></input>
+            `,
+            methods: {
+                onCouponApplied: function() {
+                    Event.$emit('applied');
+                }
+            }
+        });
+
+
+        var app = new Vue({
+            el: '#root',
+            data: {
+                couponApplied: false
+            },
+            created: function() {
+                Event.$on('applied', function() { 
+                    alert('Applied.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+```
