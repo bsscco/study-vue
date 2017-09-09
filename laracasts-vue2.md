@@ -457,3 +457,44 @@
 </body>
 <html>
 ```
+<br>
+
+**컴포넌트 커뮤니케이션 연습1 vue버전**
+```html
+<html>
+<body>
+    <div id="root">
+        <coupon @applied="onCouponApplied"></coupon>
+        <p v-if="couponApplied">Coupon applied.</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.4.2"></script>
+
+    <script>
+        Vue.component('coupon', {
+            template: `
+                <input placeholder="Input coupon." @blur="onCouponApplied"></input>
+            `,
+            methods: {
+                onCouponApplied: function() {
+                    this.$emit('applied');
+                }
+            }
+        });
+
+
+        var app = new Vue({
+            el: '#root',
+            data: {
+                couponApplied: false
+            },
+            methods: {
+                onCouponApplied: function() {
+                    this.couponApplied = true;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+```
